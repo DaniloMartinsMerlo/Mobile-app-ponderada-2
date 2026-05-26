@@ -22,7 +22,7 @@ struct ListaView: View {
                             ProgramaView(programa: programa)
                         } label: {
                             ShowCard(programa: programa)
-                        }
+                        }.buttonStyle(PlainButtonStyle())
                     }
                 }
                 .padding()

@@ -13,27 +13,28 @@ struct InfoBadge: View {
     var body: some View {
         HStack{
              ZStack{
-                 Rectangle().fill(Color(.orange)).opacity(0.2)
+                 Rectangle().fill(Color(.orange)).opacity(0.2).frame(height: 85)
                  VStack{
-                     Image(systemName: "document.fill")
+                     Image(systemName: "tv.inset.filled")
                      Text(String(programa.episodios))
                      Text("Episódios")
                  }
              }
             ZStack{
-                Rectangle().fill(Color(.green)).opacity(0.2)
+                Rectangle().fill(Color(.green)).opacity(0.2).frame(height: 85)
                 VStack{
-                    Image(systemName: "document.fill")
+                    Image(systemName: "film.stack")
                     Text(String(programa.temporadas))
                     Text("Temporadas")
                 }
             }
             ZStack{
-                Rectangle().fill(Color(.blue)).opacity(0.2)
+                Rectangle().fill(Color(.blue)).opacity(0.2).frame(height: 85)
                 VStack{
-                    Image(systemName: "document.fill")
-                    Text(String(programa.status))
+                    Image(systemName: "clock.arrow.circlepath")
                     Text("Status")
+                    Text(String(programa.status))
+                    
                 }
             }
         }

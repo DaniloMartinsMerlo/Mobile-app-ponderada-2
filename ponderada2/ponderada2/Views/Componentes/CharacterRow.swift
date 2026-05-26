@@ -12,7 +12,7 @@ struct CaracterRow: View {
     
     var body: some View {
         VStack(spacing: 8){
-            ForEach(programa.personagem, id: \.nome){ personagem in
+            ForEach(programa.personagens, id: \.nome){ personagem in
                 ZStack{
                     RoundedRectangle(cornerRadius:10)
                         .fill(Color(.secondarySystemBackground))
@@ -23,7 +23,6 @@ struct CaracterRow: View {
                             Text(personagem.nome).font(.headline)
                             Text(personagem.papel)
                                 .font(.subheadline)
-                                .forgroundColor(.secondary)
                         }
                         Spacer()
                     }

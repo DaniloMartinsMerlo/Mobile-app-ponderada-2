@@ -13,9 +13,9 @@ struct ShowCard: View {
         HStack(spacing: 12) {
             // TODO A: barra lateral colorida por tipo
             
-            Rectangle().fill(getColor(tipo: programa.tipo)).frame(width: 6)
+            Rectangle().fill(getColor(tipo: programa.tipo)).frame(width: 6, height: 150)
             ZStack {
-                RoundedRectangle(cornerRadius: 25).fill(getColor(tipo: programa.tipo).opacity(0.5)).frame(width: 100)
+                RoundedRectangle(cornerRadius: 25).fill(getColor(tipo: programa.tipo).opacity(0.5)).frame(width: 100, height: 150)
                 Image(systemName: "tv.inset.filled")
             }
 
@@ -26,15 +26,14 @@ struct ShowCard: View {
                     Text(programa.tipo)
                 }.frame(width: 75)
 
-                Text(programa.nome).font(Font.title)
+                Text(programa.nome).font(Font.title2)
                 Text(programa.genero)
                 HStack(spacing: 2) {
                     ForEach(0..<5){ index in
-                        Image(systemName: index < Int(programa.avaliacao.rounded()) ? "star.fill" : "star")
+                        Image(systemName: index < Int(programa.avaliacao.rounded(.down)) ? "star.fill" : "star")
                             .foregroundColor(.yellow)
                     }
-                    Text(String(programa.avaliacao)
-                        .foregroundColor(.secondary)
+                    Text(String(programa.avaliacao))
                 }
             }
             Spacer()

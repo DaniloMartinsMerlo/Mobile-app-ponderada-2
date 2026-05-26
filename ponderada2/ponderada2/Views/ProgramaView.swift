@@ -13,16 +13,16 @@ struct ProgramaView: View {
                 // TODO E: ZStack com hero (fundo + emoji + overlay)
                 //         badge de tipo + nome em cima do hero
                 ZStack{
-                    Rectangle().fill(getcolor(tipo: programa.tipo)).frame(height: 250)
-                    Image(systemName: "document.fill")
+                    Rectangle().fill(getColor(tipo: programa.tipo)).frame(height: 250)
+                    Text(programa.emoji).font(.title)
                     VStack{
                         Spacer()
-                        Retangle()
+                        Rectangle()
                             .fill(
                                 LinearGradient(
                                     gradient: Gradient(colors: [
-                                        .black.opacity(0.75)
-                                        .black.opacity(0.3)
+                                        .black.opacity(0.75),
+                                        .black.opacity(0.3),
                                         .clear
                                     ]),
                                     startPoint: .bottom,
@@ -38,11 +38,10 @@ struct ProgramaView: View {
                                 VStack(alignment: .leading, spacing: 4) {
                                     ZStack(){
                                         Capsule()
-                                            .fill(getcolor(tipo: programa.tipo))
+                                            .fill(getColor(tipo: programa.tipo))
                                             .frame(width: 80, height: 26)
-                                        Text(program.tipo)
+                                        Text(programa.tipo)
                                             .font(.caption)
-                                            .foregroundColot(.white)
                                     }
                                     Text(programa.nome)
                                         .foregroundColor(.white)
@@ -56,6 +55,7 @@ struct ProgramaView: View {
                 // TODO F: secao Sinopse (Text com naruto.sinopse)
                 Text("Sinopse")
                     .font(.title)
+                    .padding(10)
                 ZStack{
                     RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2)
                     Text(programa.sinopse).padding(10)
@@ -63,15 +63,15 @@ struct ProgramaView: View {
                 Divider()
                 // TODO G: HStack com 3x InfoBadge
                 //         (episodios, temporadas, status)
-                Text("Informações").font(Font.title)
-                InfoBadge(programa: programa)
+                Text("Informações").font(Font.title).padding(10)
+                InfoBadge(programa: programa).padding(10)
                 Divider()
                 
                 // TODO H: secao Personagens
                 //         ForEach sobre naruto.personagens
                 //         -> CharacterRow para cada um
                 
-                Text("Personagens Principais").font(.title)
+                Text("Personagens Principais").font(.title).padding(10)
                 CaracterRow(programa: programa)
                 
                 NavigationLink{
