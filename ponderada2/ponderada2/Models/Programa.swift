@@ -19,6 +19,7 @@ struct Programa: Identifiable {
     let status: String     // "Em exibicao" | "Concluido"
     let personagens: [(nome: String, papel: String, emoji: String)]
     let wikipediaURL: String
+    let capaURL: String    // URL da imagem de capa
 }
  
 // ─── Dados fornecidos pelo professor — nao alterar ───────────────────────────
@@ -34,7 +35,8 @@ let naruto = Programa(
         ("Sasuke Uchiha",  "Rival",        "\u{26A1}"),
         ("Sakura Haruno",  "Companheira",  "\u{1F338}")
     ],
-    wikipediaURL: "https://pt.wikipedia.org/wiki/Naruto_(anime)"
+    wikipediaURL: "https://pt.wikipedia.org/wiki/Naruto_(anime)",
+    capaURL: "https://upload.wikimedia.org/wikipedia/pt/d/d2/Naruto_vol._01.jpg"
 )
  
 let avatar = Programa(
@@ -48,7 +50,8 @@ let avatar = Programa(
         ("Katara", "Aliada",       "\u{1F4A7}"),
         ("Zuko",   "Antagonista",  "\u{1F525}")
     ],
-    wikipediaURL: "https://pt.wikipedia.org/wiki/Avatar:_A_Lenda_de_Aang"
+    wikipediaURL: "https://pt.wikipedia.org/wiki/Avatar:_A_Lenda_de_Aang",
+    capaURL: "https://upload.wikimedia.org/wikipedia/pt/b/b0/Avatar-Teaser-Poster.jpg"
 )
  
 let strangerThings = Programa(
@@ -62,7 +65,8 @@ let strangerThings = Programa(
         ("Mike Wheeler","Lider",        "\u{1F9D1}"),
         ("Demogorgon",  "Antagonista",  "\u{1F479}")
     ],
-    wikipediaURL: "https://pt.wikipedia.org/wiki/Stranger_Things"
+    wikipediaURL: "https://pt.wikipedia.org/wiki/Stranger_Things",
+    capaURL: "https://upload.wikimedia.org/wikipedia/pt/2/29/Stranger_Things_Temporada_1_Poster.jpg"
 )
  
 // ─── Programas adicionais ─────────────────────────────────────────────────────
@@ -78,7 +82,8 @@ let onepiece = Programa(
         ("Roronoa Zoro",    "Vice-capitao", "\u{2694}"),
         ("Nami",            "Navegadora",   "\u{1F5FA}")
     ],
-    wikipediaURL: "https://pt.wikipedia.org/wiki/One_Piece_(anime)"
+    wikipediaURL: "https://pt.wikipedia.org/wiki/One_Piece_(anime)",
+    capaURL: "https://upload.wikimedia.org/wikipedia/pt/f/ff/One_Piece_vol._01.jpg"
 )
  
 let demonSlayer = Programa(
@@ -92,7 +97,8 @@ let demonSlayer = Programa(
         ("Nezuko Kamado",  "Irma/Demonio",  "\u{1F338}"),
         ("Zenitsu Agatsuma","Companheiro",  "\u{26A1}")
     ],
-    wikipediaURL: "https://pt.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba"
+    wikipediaURL: "https://pt.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba",
+    capaURL: "https://upload.wikimedia.org/wikipedia/pt/4/45/Kimetsu_no_Yaiba_%28capa_do_volume_1%29.png"
 )
  
 let attackOnTitan = Programa(
@@ -106,7 +112,8 @@ let attackOnTitan = Programa(
         ("Mikasa Ackerman","Aliada",      "\u{1F5E1}"),
         ("Armin Arlert", "Estrategista",  "\u{1F4DA}")
     ],
-    wikipediaURL: "https://pt.wikipedia.org/wiki/Attack_on_Titan"
+    wikipediaURL: "https://pt.wikipedia.org/wiki/Attack_on_Titan",
+    capaURL: "https://upload.wikimedia.org/wikipedia/pt/e/e7/SnK_Volume1.png"
 )
  
 let breakingBad = Programa(
@@ -120,7 +127,8 @@ let breakingBad = Programa(
         ("Jesse Pinkman","Parceiro",     "\u{1F6BC}"),
         ("Hank Schrader","Antagonista",  "\u{1F46E}")
     ],
-    wikipediaURL: "https://pt.wikipedia.org/wiki/Breaking_Bad"
+    wikipediaURL: "https://pt.wikipedia.org/wiki/Breaking_Bad",
+    capaURL: "https://m.media-amazon.com/images/I/61EdNgbduqL._AC_UF894,1000_QL80_.jpg"
 )
  
 let darkSerie = Programa(
@@ -134,7 +142,8 @@ let darkSerie = Programa(
         ("Claudia Tiedemann","Aliada",     "\u{231B}"),
         ("Adam",           "Antagonista",  "\u{1F47E}")
     ],
-    wikipediaURL: "https://pt.wikipedia.org/wiki/Dark_(série_de_televisão)"
+    wikipediaURL: "https://pt.wikipedia.org/wiki/Dark_(série_de_televisão)",
+    capaURL: "https://m.media-amazon.com/images/I/A1liQf7C9LL._AC_SX679_.jpg"
 )
  
 let bobEsponja = Programa(
@@ -148,5 +157,6 @@ let bobEsponja = Programa(
         ("Patrick Estrela","Melhor Amigo","\u{2B50}"),
         ("Lula Molusco", "Vizinho",      "\u{1F419}")
     ],
-    wikipediaURL: "https://pt.wikipedia.org/wiki/Bob_Esponja_Calça_Quadrada"
+    wikipediaURL: "https://pt.wikipedia.org/wiki/Bob_Esponja_Calça_Quadrada",
+    capaURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/SpongeBob_SquarePants_with_2023_Nickelodeon_Logo.png/1920px-SpongeBob_SquarePants_with_2023_Nickelodeon_Logo.png"
 )

@@ -14,7 +14,33 @@ struct ProgramaView: View {
                 //         badge de tipo + nome em cima do hero
                 ZStack{
                     Rectangle().fill(getColor(tipo: programa.tipo)).frame(height: 250)
-                    Text(programa.emoji).font(.title)
+                    AsyncImage(url: URL(string: programa.capaURL)) { phase in
+                        switch phase {
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 300, height: 150)
+                                .clipShape(RoundedRectangle(cornerRadius: 12))
+                        case .failure(_):
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 12)
+                                    .fill(getColor(tipo: programa.tipo).opacity(0.5))
+                                    .frame(width: 100, height: 150)
+                                Text(programa.emoji)
+                                    .font(.system(size: 40))
+                            }
+                        case .empty:
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 12)
+                                    .fill(getColor(tipo: programa.tipo).opacity(0.3))
+                                    .frame(width: 100, height: 150)
+                                ProgressView()
+                            }
+                        @unknown default:
+                            EmptyView()
+                        }
+                    }
                     VStack{
                         Spacer()
                         Rectangle()

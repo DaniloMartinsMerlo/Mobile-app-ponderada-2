@@ -14,9 +14,33 @@ struct ShowCard: View {
             // TODO A: barra lateral colorida por tipo
             
             Rectangle().fill(getColor(tipo: programa.tipo)).frame(width: 6, height: 150)
-            ZStack {
-                RoundedRectangle(cornerRadius: 25).fill(getColor(tipo: programa.tipo).opacity(0.5)).frame(width: 100, height: 150)
-                Text(programa.emoji)
+
+            AsyncImage(url: URL(string: programa.capaURL)) { phase in
+                switch phase {
+                case .success(let image):
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 150)
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                case .failure(_):
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(getColor(tipo: programa.tipo).opacity(0.5))
+                            .frame(width: 100, height: 150)
+                        Text(programa.emoji)
+                            .font(.system(size: 40))
+                    }
+                case .empty:
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(getColor(tipo: programa.tipo).opacity(0.3))
+                            .frame(width: 100, height: 150)
+                        ProgressView()
+                    }
+                @unknown default:
+                    EmptyView()
+                }
             }
 
             
