@@ -16,7 +16,7 @@ struct ShowCard: View {
             Rectangle().fill(getColor(tipo: programa.tipo)).frame(width: 6, height: 150)
             ZStack {
                 RoundedRectangle(cornerRadius: 25).fill(getColor(tipo: programa.tipo).opacity(0.5)).frame(width: 100, height: 150)
-                Image(systemName: "tv.inset.filled")
+                Text(programa.emoji)
             }
 
             

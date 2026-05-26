@@ -5,7 +5,7 @@
 //  Created by ec10-g2 on 25/05/26.
 //
 import SwiftUI
-
+ 
 struct Programa: Identifiable {
     let id = UUID()
     let nome: String
@@ -18,10 +18,11 @@ struct Programa: Identifiable {
     let avaliacao: Double  // 0.0 - 5.0
     let status: String     // "Em exibicao" | "Concluido"
     let personagens: [(nome: String, papel: String, emoji: String)]
+    let wikipediaURL: String
 }
-
+ 
 // ─── Dados fornecidos pelo professor — nao alterar ───────────────────────────
-
+ 
 let naruto = Programa(
     nome: "Naruto", tipo: "Anime", emoji: "\u{1F9C6}",
     genero: "Acao - Aventura",
@@ -32,9 +33,10 @@ let naruto = Programa(
         ("Naruto Uzumaki", "Protagonista", "\u{1F9C6}"),
         ("Sasuke Uchiha",  "Rival",        "\u{26A1}"),
         ("Sakura Haruno",  "Companheira",  "\u{1F338}")
-    ]
+    ],
+    wikipediaURL: "https://pt.wikipedia.org/wiki/Naruto_(anime)"
 )
-
+ 
 let avatar = Programa(
     nome: "Avatar: A Lenda de Aang", tipo: "Desenho", emoji: "\u{1F30A}",
     genero: "Aventura - Fantasia",
@@ -45,9 +47,10 @@ let avatar = Programa(
         ("Aang",   "Protagonista", "\u{1F30A}"),
         ("Katara", "Aliada",       "\u{1F4A7}"),
         ("Zuko",   "Antagonista",  "\u{1F525}")
-    ]
+    ],
+    wikipediaURL: "https://pt.wikipedia.org/wiki/Avatar:_A_Lenda_de_Aang"
 )
-
+ 
 let strangerThings = Programa(
     nome: "Stranger Things", tipo: "Serie", emoji: "\u{1F526}",
     genero: "Terror - Ficcao Cientifica",
@@ -58,11 +61,12 @@ let strangerThings = Programa(
         ("Eleven",      "Protagonista", "\u{1F526}"),
         ("Mike Wheeler","Lider",        "\u{1F9D1}"),
         ("Demogorgon",  "Antagonista",  "\u{1F479}")
-    ]
+    ],
+    wikipediaURL: "https://pt.wikipedia.org/wiki/Stranger_Things"
 )
-
+ 
 // ─── Programas adicionais ─────────────────────────────────────────────────────
-
+ 
 let onepiece = Programa(
     nome: "One Piece", tipo: "Anime", emoji: "\u{2693}",
     genero: "Acao - Aventura",
@@ -73,9 +77,10 @@ let onepiece = Programa(
         ("Monkey D. Luffy", "Protagonista", "\u{1F3F4}"),
         ("Roronoa Zoro",    "Vice-capitao", "\u{2694}"),
         ("Nami",            "Navegadora",   "\u{1F5FA}")
-    ]
+    ],
+    wikipediaURL: "https://pt.wikipedia.org/wiki/One_Piece_(anime)"
 )
-
+ 
 let demonSlayer = Programa(
     nome: "Demon Slayer", tipo: "Anime", emoji: "\u{1F30A}",
     genero: "Acao - Sobrenatural",
@@ -86,9 +91,10 @@ let demonSlayer = Programa(
         ("Tanjiro Kamado", "Protagonista",  "\u{1F525}"),
         ("Nezuko Kamado",  "Irma/Demonio",  "\u{1F338}"),
         ("Zenitsu Agatsuma","Companheiro",  "\u{26A1}")
-    ]
+    ],
+    wikipediaURL: "https://pt.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba"
 )
-
+ 
 let attackOnTitan = Programa(
     nome: "Attack on Titan", tipo: "Anime", emoji: "\u{1F9F1}",
     genero: "Acao - Distopia",
@@ -99,9 +105,10 @@ let attackOnTitan = Programa(
         ("Eren Yeager",  "Protagonista",  "\u{1F9F1}"),
         ("Mikasa Ackerman","Aliada",      "\u{1F5E1}"),
         ("Armin Arlert", "Estrategista",  "\u{1F4DA}")
-    ]
+    ],
+    wikipediaURL: "https://pt.wikipedia.org/wiki/Attack_on_Titan"
 )
-
+ 
 let breakingBad = Programa(
     nome: "Breaking Bad", tipo: "Serie", emoji: "\u{2697}",
     genero: "Drama - Crime",
@@ -112,9 +119,10 @@ let breakingBad = Programa(
         ("Walter White", "Protagonista", "\u{2697}"),
         ("Jesse Pinkman","Parceiro",     "\u{1F6BC}"),
         ("Hank Schrader","Antagonista",  "\u{1F46E}")
-    ]
+    ],
+    wikipediaURL: "https://pt.wikipedia.org/wiki/Breaking_Bad"
 )
-
+ 
 let darkSerie = Programa(
     nome: "Dark", tipo: "Serie", emoji: "\u{1F300}",
     genero: "Ficcao Cientifica - Misterio",
@@ -125,9 +133,10 @@ let darkSerie = Programa(
         ("Jonas Kahnwald", "Protagonista", "\u{1F300}"),
         ("Claudia Tiedemann","Aliada",     "\u{231B}"),
         ("Adam",           "Antagonista",  "\u{1F47E}")
-    ]
+    ],
+    wikipediaURL: "https://pt.wikipedia.org/wiki/Dark_(série_de_televisão)"
 )
-
+ 
 let bobEsponja = Programa(
     nome: "Bob Esponja", tipo: "Desenho", emoji: "\u{1F9FD}",
     genero: "Comedia - Aventura",
@@ -138,5 +147,6 @@ let bobEsponja = Programa(
         ("Bob Esponja",  "Protagonista", "\u{1F9FD}"),
         ("Patrick Estrela","Melhor Amigo","\u{2B50}"),
         ("Lula Molusco", "Vizinho",      "\u{1F419}")
-    ]
+    ],
+    wikipediaURL: "https://pt.wikipedia.org/wiki/Bob_Esponja_Calça_Quadrada"
 )

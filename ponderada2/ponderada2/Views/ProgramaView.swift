@@ -80,7 +80,7 @@ struct ProgramaView: View {
                     
                     ZStack{
                         RoundedRectangle(cornerRadius: 10).fill(.orange).opacity(0.2)
-                        Text("Ver todos os episodios").padding(10)
+                        Link("Saiba mais", destination: URL(string: programa.wikipediaURL)!).padding(10)
                     }.padding(10)
                     
                 }
